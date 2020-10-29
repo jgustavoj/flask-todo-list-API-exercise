@@ -1,22 +1,14 @@
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask(__name__)
 
+todos = [
+    { "label": "My first task", "done": False },
+    { "label": "My second task", "done": False }
+]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@app.route('/todos', methods=['GET'])
+def hello_world():
+    return jsonify(todos)
 
 
 
